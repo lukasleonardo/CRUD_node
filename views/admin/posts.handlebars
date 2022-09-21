@@ -1,0 +1,28 @@
+<h2>Lista de Posts</h2>
+<hr>
+
+{{#each posts}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Titulo: {{titulo}}</h4>
+            <small class="card-text ">Slug: {{slug}}</small>
+            <h5 class="card-text mt-2">Descrição: {{description}}</h5>
+            <small class="card-text">Conteudo: {{conteudo}}</small>
+            <br>
+            <small class="card-text">Categoria: {{categoria.nome}}</small>
+            <br>
+            <a href='/admin/posts/edit/{{_id}}'><button class="btn btn-primary mt-3">Editar</button></a>
+        
+            <form action="/admin/posts/delete" method="POST">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger mt-3">Deletar</button>
+            </form>
+        </div>
+
+    </div>
+{{else}}
+<h2>Nada aqui!</h2>
+{{/each}}
+
+<hr>
+<a href="/admin/posts/add-post"><button class="btn btn-success"> Nova Postagem</button></a>

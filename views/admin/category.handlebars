@@ -1,0 +1,26 @@
+<h2>Lista de categorias:</h2>
+
+{{#each categories}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Nome: {{nome}}</h4>
+            <small class="card-text ">Slug: {{slug}}</small>
+            <br>
+            <a href='/admin/category/edit/{{_id}}'><button class="btn btn-primary mt-3">Editar</button></a>
+        
+            <form action="/admin/category/delete" method="POST">
+                <input type="hidden" name="id" value="{{_id}}">
+                <button type="submit" class="btn btn-danger mt-3">Deletar</button>
+            </form>
+        </div>
+
+    </div>
+{{else}}
+    <hr>
+   <div class="container container"> <h4>Nada aqui!</h4> </div> 
+{{/each}}
+
+
+
+<hr>
+<a href="/admin/category/add-category"><button class="btn btn-success"> Nova Categoria</button></a>

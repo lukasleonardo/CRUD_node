@@ -1,0 +1,16 @@
+<div class="card">
+  <h2 class="p-3 ">Categorias</h2>
+  <hr>
+  <div class="card-body">
+    <div class="list-group">
+      {{#each categories}}
+      <a href="/category/{{slug}}" class="list-group-item" >
+        {{nome}}
+      </a>
+      {{else}}
+      <li class="list-group-item">Não há categorias</li>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
